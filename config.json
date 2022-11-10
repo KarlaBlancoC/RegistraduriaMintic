@@ -1,0 +1,6 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+  "database-url": "mongodb+srv://karlablanco:7LLqVE5bjY4dv5sr@cluster0.bdoq3z9.mongodb.net/db-registraduria?retryWrites=true&w=majority",
+  "database-name": "db-registraduria"
+}
