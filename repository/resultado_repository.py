@@ -23,3 +23,9 @@ class RepositorioResultado(InterfaceRepository[Resultado]):
         resultado["candidato"] = self.repo_can.find_by_id(id_candidato)
 
         return resultado
+
+    def find_by_query(self,query):
+        return self.repo.query(query)
+
+    def find_by_aggregate(self,query):
+        return self.repo.aggregate(query)

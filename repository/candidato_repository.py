@@ -23,3 +23,9 @@ class RepositorioCandidato(InterfaceRepository[Candidato]):
         candidato["partido"] = self.repo_par.find_by_id(id_partido)
 
         return candidato
+
+    def find_by_query(self, query):
+        return self.repo.query(query)
+
+    def find_by_aggregate(self, query):
+        return self.repo.aggregate(query)

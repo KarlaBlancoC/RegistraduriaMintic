@@ -148,6 +148,14 @@ def eliminar_resultado(id):
     resp = resultado_controller.delete(id)
     return jsonify(resp)
 
+@app.route("/votos-candidatos", methods=["POST"])
+def votos_candidatos():
+    q = request.get_json()
+    votos = resultado_controller.find_by_query(q)
+    return jsonify(votos)
+
+
+
 if __name__ == "__main__":
     data_config = load_file_config()
     print(f"Server running: http://{data_config['url-backend']}:{data_config['port']}")

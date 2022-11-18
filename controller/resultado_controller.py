@@ -52,3 +52,5 @@ class ControladorResultado():
             x["candidato"] = self.repo_candidato.find_by_id(id_candidato)
         return resultados
 
+
+
