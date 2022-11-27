@@ -26,3 +26,6 @@ class ControladorCandidato():
     # Eliminar
     def delete(self, id):
         return self.repo.delete(id)
+
+    def find_by_query(self, query):
+        return self.repo.query(query)

@@ -38,7 +38,6 @@ class InterfaceRepository(Generic[T]):
         col = self.base_datos[self.collection]
         x = col.find_one({"_id": ObjectId(id)})
         x["_id"] = x["_id"].__str__()
-
         return x
 
     def delete(self, id):

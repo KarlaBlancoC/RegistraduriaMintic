@@ -154,6 +154,17 @@ def votos_candidatos():
     votos = resultado_controller.find_by_query(q)
     return jsonify(votos)
 
+@app.route("/partido/query", methods=["POST"])
+def mostrar_partido_nombre():
+    q = request.get_json()
+    resp = partido_controller.find_by_query(q)
+    return jsonify(resp)
+
+@app.route("/candidato/query", methods=["POST"])
+def mostrar_candidato_query():
+    q = request.get_json()
+    resp = candidato_controller.find_by_query(q)
+    return jsonify(resp)
 
 
 if __name__ == "__main__":
