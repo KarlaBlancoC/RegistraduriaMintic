@@ -50,7 +50,6 @@ class InterfaceRepository(Generic[T]):
         delattr(item, "_id")
         item = item.__dict__
         update_item = {"$set":item}
-
         x = col.update_one({"_id": ObjectId(id)},update_item)
         return {"updated_count": x.matched_count}
 
@@ -64,6 +63,7 @@ class InterfaceRepository(Generic[T]):
 
     def query(self,the_query):
         col = self.base_datos[self.collection]
+        print(col)
         data =[]
         for x in col.find(the_query):
             x["_id"] = x["_id"].__str__()
